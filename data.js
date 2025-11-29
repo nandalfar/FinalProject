@@ -7,7 +7,7 @@ let games = [
         Memory: 8,
         Graphics: ["NVIDIA GeForce GTX 960","AMD Radeon R7 360"],
         Storage: 12,
-        Harga: 729.000,
+        Harga: 729000,
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ let games = [
         Memory: 8,
         Graphics: ["NVIDIA GeForce GTX 770 2GB","AMD Radeon R9 280 3GB"],
         Storage: 150,
-        Harga: 879.000,
+        Harga: 879000,
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ let games = [
         Memory: 16,
         Graphics: ["NVIDIA GeForce GTX 1060","AMD Radeon RX 570", "Intel ARC A380"],
         Storage: 60,
-        Harga: "Free",
+        Harga: 0,
     },
     {
         id: 4,
@@ -35,9 +35,9 @@ let games = [
         OS: "Windows 7",
         Processor: ["Dual core from Intel at 2.8GHz",  "Dual core from AMD at 2.8GHz"],
         Memory: 4,
-        Graphics: ["NNVIDIA GeForce 8600", "NVIDIA GeForce 9600", "AMD Radeon HD2600", "AMD Radeon HD3600"],
+        Graphics: ["NVIDIA GeForce 8600", "NVIDIA GeForce 9600", "AMD Radeon HD2600", "AMD Radeon HD3600"],
         Storage: 60,
-        Harga: "Free",
+        Harga: 0,
     },
     {
         id: 5,
@@ -47,7 +47,7 @@ let games = [
         Memory: 2,
         Graphics: ["256 mb video memory"],
         Storage: 0.5,
-        Harga: 115.999,
+        Harga: 115999,
     },
     {
         id: 6,
@@ -57,7 +57,7 @@ let games = [
         Memory: 4,
         Graphics: ["GeForce GTX 560 Ti (1GB)", "Radeon HD 7750 (1GB)"],
         Storage: 8,
-        Harga: 165.999,
+        Harga: 165999,
     },
     {
         id: 7,
@@ -67,7 +67,7 @@ let games = [
         Memory: 16,
         Graphics: ["NVIDIA® GeForce® GTX 1660(VRAM 6GB)", "AMD Radeon™ RX 5500 XT(VRAM 8GB)"],
         Storage: 75,
-        Harga: 869.000,
+        Harga: 869000,
     },
     {
         id: 8,
@@ -77,7 +77,7 @@ let games = [
         Memory: 8,
         Graphics: ["GTX 1060", "RX 6600 XT"],
         Storage: 4,
-        Harga: 69.999,
+        Harga: 69999,
     }
 ];
 

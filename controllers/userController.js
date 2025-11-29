@@ -1,32 +1,63 @@
 import {
     getAllGame,
     getGamebyID,
+    updateGame,
+    deleteGame,
     addGame
 } from "../services/userService.js" ;
 
 async function getAllGameController(req, res) {
     try {
-        const allGame = await getAllGame() ;
-
+        const allGame = await getAllGame(req.query) ;
         if(allGame.length === 0) {
             return res.status(404).json({ message: "No games found"}) ;
         }
-
         res.status(200).json(allGame) ;
     } catch (error) {
-        res.status(500).json({message: error.message}) ;
+        if(error.message === "Permitted filters Only Nama and Harga") {
+            res.status(400).json({message: error.message}) ;
+        }else {
+            res.status(500).json({message: error.message}) ;
+        }
     }
 }
 
 async function getGamebyIDController(req, res) {
     try {
-        const game = await getGamebyID(req.params.id) ;
+        const game = await getGamebyID(req.params.ID) ;
         res.status(200).json(game) ;
     } catch (error) {
         if(error.message === "Game not found") {
-            return res.status(404).json({message: error.message}) ;
+            res.status(404).json({message: error.message}) ;
+        }else {
+            res.status(500).json({message: error.message}) ;
         }
-        res.status(500).json({message: error.message}) ;
+    }
+}
+
+async function updateGameController(req, res) {
+    try {
+        const updatedGame = await updateGame(req.params.ID, req.body) ;
+        res.status(200).json({message: "Game updated successfully", updatedGame}) ;
+    } catch (error) {
+        if(error.message === "Game not found") {
+            res.status(404).json({message: error.message}) ;
+        }else {
+            res.status(500).json({message: error.message}) ;
+        }
+    }
+}
+
+async function deleteGameController(req, res) {
+    try {
+        const deletedGame = await deleteGame(req.params.ID) ;
+        res.status(200).json({message: "Game deleted successfully", deletedGame}) ;
+    } catch (error) {
+        if(error.message === "Game not found") {
+            res.status(404).json({message: error.message}) ;
+        }else {
+            res.status(500).json({message: error.message}) ;
+        }
     }
 }
 
@@ -62,5 +93,7 @@ async function addGameController(req, res) {
 export {
     getAllGameController,
     getGamebyIDController,
+    updateGameController,
+    deleteGameController,
     addGameController
 } ;
