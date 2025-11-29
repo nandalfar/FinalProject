@@ -38,13 +38,13 @@ async function updateGame(ID, gameData) {
         throw new Error ("Game not found") ;
     }
 
-    dataGame[gameIndex].Nama = gameData.Nama || dataGame[gameIndex].Nama ;
-    dataGame[gameIndex].OS = gameData.OS || dataGame[gameIndex].OS ;
-    dataGame[gameIndex].Processor = gameData.Processor || dataGame[gameIndex].Processor ;
-    dataGame[gameIndex].Memory = gameData.Memory || dataGame[gameIndex].Memory ;
-    dataGame[gameIndex].Graphics = gameData.Graphics || dataGame[gameIndex].Graphics ;
-    dataGame[gameIndex].Storage = gameData.Storage || dataGame[gameIndex].Storage ;
-    dataGame[gameIndex].Harga = gameData.Harga || dataGame[gameIndex].Harga ;
+    dataGame[gameIndex].Nama = gameData.Nama ?? dataGame[gameIndex].Nama ;
+    dataGame[gameIndex].OS = gameData.OS ?? dataGame[gameIndex].OS ;
+    dataGame[gameIndex].Processor = gameData.Processor ?? dataGame[gameIndex].Processor ;
+    dataGame[gameIndex].Memory = gameData.Memory ?? dataGame[gameIndex].Memory ;
+    dataGame[gameIndex].Graphics = gameData.Graphics ?? dataGame[gameIndex].Graphics ;
+    dataGame[gameIndex].Storage = gameData.Storage ?? dataGame[gameIndex].Storage ;
+    dataGame[gameIndex].Harga = gameData.Harga ?? dataGame[gameIndex].Harga ;
     return dataGame[gameIndex] ;
 }
 
