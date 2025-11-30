@@ -86,6 +86,9 @@ async function addGameController(req, res) {
       const newGame = await addGame(req.body) ;
       res.status(201).json(newGame) ;  
     } catch (error) {
+        if(error.message === "Game already exists") {
+            res.status(409).json({message: error.message}) ;
+        }
         res.status(500).json({message: error.message}) ;
     }
 }

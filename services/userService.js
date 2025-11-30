@@ -61,6 +61,12 @@ async function deleteGame(ID) {
 }
 
 async function addGame(gameData) {
+    const game = dataGame.find((g) => g.Nama === gameData.Nama) ;
+
+    if(game) {
+        throw new Error("Game already exists") ;
+    }
+
     const newGame = {
         id: dataGame.length + 1,
         Nama: gameData.Nama,
