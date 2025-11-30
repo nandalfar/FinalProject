@@ -4,7 +4,7 @@ import {
     updateGame,
     deleteGame,
     addGame
-} from "../services/userService.js" ;
+} from "../services/gameService.js" ;
 
 async function getAllGameController(req, res) {
     try {

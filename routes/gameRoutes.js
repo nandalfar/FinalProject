@@ -5,7 +5,7 @@ import {
     updateGameController,
     deleteGameController,
     addGameController
-} from "../controllers/userController.js" ;
+} from "../controllers/gameController.js" ;
 const router = express.Router() ;
 
 router.get("/games", getAllGameController) ;
